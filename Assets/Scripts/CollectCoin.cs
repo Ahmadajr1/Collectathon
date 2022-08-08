@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CollectCoin : MonoBehaviour
 {
+
+    [SerializeField] TextMeshProUGUI coinText;
     int collectedCoints = 0;
     private SoundManager sm;
 
@@ -11,6 +13,11 @@ public class CollectCoin : MonoBehaviour
     void Start()
     {
         sm = GameObject.Find("Sound Manager").GetComponent<SoundManager>();
+    }
+
+    private void Update()
+    {
+        coinText.SetText("" + collectedCoints);
     }
 
     private void OnTriggerEnter(Collider other)
