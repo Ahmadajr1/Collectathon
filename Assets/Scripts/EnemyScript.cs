@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] int damage;
+    [SerializeField] float damage;
 
     private PlayerStatus playerStatus;
     private Rigidbody playerRB;

@@ -1,23 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using Unity.UI;
+using UnityEngine.UI;
 
 public class PlayerStatus: MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] private Image healthBar;
 
-    private int health = 3;
+    private float health = 1;
 
-    public void AttackPlayer(int damage)
+    public void AttackPlayer(float damage)
     {
         health -= damage;
     }
 
     private void Update()
     {
-        healthText.SetText("" + health);
-        if (health < 1)
+        healthBar.fillAmount = health;
+        if (health <= 0.2)
             die();
     }
 
