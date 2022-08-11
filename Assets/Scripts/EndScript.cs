@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndScript : MonoBehaviour
 {
+    [SerializeField] string nextLevel;
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(nextLevel);
             Debug.Log("You won!");
         }
     }
